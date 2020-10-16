@@ -32,8 +32,8 @@ function App() {
 
 
   function onCountryChange(event){
-    const countryCode = event.target.value;
-    setCountry(countryCode);
+    const countyCode = event.target.value;
+    setCountry(countyCode);
   }
   
 
