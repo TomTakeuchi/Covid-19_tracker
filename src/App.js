@@ -31,10 +31,12 @@ function App() {
   //https://covid19-japan-web-api.now.sh/api//v1/prefectures
   　    console.log(mapCenter);
 
-  
+  let url ='https://covid19-japan-web-api.now.sh/api//v1/total'
+  let url2 = 'https://covid19-japan-web-api.now.sh/api//v1/prefectures'
+  let proxy = 'https://cors-anywhere.herokuapp.com/'
 
   useEffect(()=>{
-    fetch('https://covid19-japan-web-api.now.sh/api//v1/total')
+    fetch(proxy+url)
     .then((response)=>response.json())
     .then((data)=>{
       setTotalInfo(data);
@@ -43,7 +45,7 @@ function App() {
 
   useEffect(()=>{
     async function getCountriesData(){
-      await fetch("https://covid19-japan-web-api.now.sh/api//v1/prefectures")
+      await fetch(proxy+url2)
       .then((response)=>response.json())
       .then((data)=>{
         const prefectures = data.map((prefecture)=>(
